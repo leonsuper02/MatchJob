@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo-removebg-preview.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macth Job</title>
+    <link rel="stylesheet" href="./inicio.css">
+
+
+</head>
+<body>
+    <!-- barra lateral -->
+    <div class="sidebar" id="sidebar">
+        
+        <a href="#incio" class="menu-link" onclick="mostrarInicio()">Home</a>
+        <!-- <a href="#Curriculo" class="menu-link" onclick="mostrarDiv1()">Enviar Curriculo</a> -->
+        <a href="#Empresas" class="menu-link" onclick="mostrarDiv2()">Empresas Interessadas</a>
+        <a href="#SobreNós" class="menu-link" onclick="mostrarDiv3()">Sobre Nós</a>
+        
+    </div>
+    <!-- fim barra lateral -->
+    
+    <!-- barra em cima -->
+    <div class="content">
+        <div class="header">
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <img class="logo-cima" src="./img/matchjob.png" alt="">
+            <div class="user-info">
+                <h3 id="nome-usuario">Usuário</h3>
+                <img src="./img/sla.jfif" alt="Usuário" class="user-icon" id="foto-usuario" onclick="toggleUserMenu()">
+
+                <div class="user-menu" id="user-menu">
+                    <!-- Input escondido para upload da foto -->
+                    <label for="input-foto" style="display: block; padding: 10px; cursor: pointer; color: black; text-align: center; border-bottom: 1px solid #ddd;">
+                        Mudar foto de perfil
+                    </label>
+                    <input type="file" id="input-foto" accept="image/*" style="display: none;">
+                    
+                    <a href="#" onclick="abrirModalStatus()">Status de <span id="nome-curto">Usuário</span></a>
+
+
+                    <a onclick="logout()" href="#" style="display: block; padding: 10px; color: black; text-align: center;">Sair</a>
+                </div>
+
+            </div>
+        </div>
+        
+
+
+        <section id="inicio">
+            
+            <div id="inicio" class="inicio"> <!-- Inicio -->
+
+            <div class="ajust">
+                <div class="inicioum">
+
+                    <div class="cent">
+
+                        <div class="pesq">
+                            <div class="input-group">
+                                <label for="email">Pesquisar Endereço:</label> 
+                                <input type="search" id="busca-endereco" placeholder="Digite seu endereço...">
+                            </div>
+                            <!-- Leaflet Mapa -->
+                            <div class="mapa-centralizado mapa-destaque">
+                                <iframe src="https://www.google.com/maps/embed?pb=..." ... ></iframe>
+                            </div>
+
+
+
+
+                            <!-- MOVER AQUI: detalhes da empresa -->
+                            <div class="mostra" id="detalhes-empresa">
+                                <div class="info">
+                                    <h3 id="nome-empresa-exibida">Empresa: </h3>
+                                    <p id="descricao-empresa">Descrição: </p>
+                                    <p id="beneficios-empresa">Benefícios: </p>
+                                    <button onclick="enviarParaCurriculo()">Enviar Currículo</button>
+                                </div>
+                            </div>
+                        </div>
+
+    
+                        
+                        <div class="mostra" id="detalhes-empresa"> <!-- mostrar ao clicar -->
+                            <div class="info">
+                                <h3 id="nome-empresa-exibida">Empresa: </h3>
+                                <p id="descricao-empresa">Descrição: </p>
+                                <p id="beneficios-empresa">Benefícios: </p>
+                                <button onclick="enviarParaCurriculo()">Enviar Currículo</button>
+                            </div>
+                        </div>
+                        
+                        <div class="iniciodois">
+    <div class="resu">
+        <div class="input-group">
+            <label for="text">Pesquisar Área de Trabalho:</label>
+            <input type="text" id="text" placeholder="Pesquisar...">
+        </div>
+    </div>
+
+    <div class="opc" id="lista-trabalhos">
+        <!-- preenchido via JS -->
+    </div>
+
+    <div class="mostra" id="detalhes-empresa">
+        <div class="info">
+            <h3 id="nome-empresa-exibida">Empresa: </h3>
+            <p id="descricao-empresa">Descrição: </p>
+            <p id="beneficios-empresa">Benefícios: </p>
+            <button onclick="enviarParaCurriculo()">Enviar Currículo</button>
+        </div>
+    </div>
+</div>
+
+                        
+                        
+                    </div>
+             
+                </div>
+<!-- aq --></div>
+            </div>
+        </section>
+
+        <section id="Curriculo">
+            <div id="principal" class="cont-prin">
+                <div class="ajust">
+    <div class="inicioum">
+        <h2>Enviar Currículo para <span id="nome-empresa">[Empresa Selecionada]</span></h2>
+        <form id="form-curriculo">
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" required>
+
+            <label for="curriculo">Selecionar Currículo (PDF ou DOCX):</label>
+            <input type="file" id="curriculo" accept=".pdf,.doc,.docx" required>
+
+            <label for="mensagem">Habilidades Profissionais (opcional):</label>
+            <textarea id="mensagem" rows="4"></textarea>
+
+            <button type="submit">Enviar Currículo</button>
+        </form>
+
+        <div id="mensagem-sucesso" class="sucesso" style="display: none;">
+            ✅ Currículo enviado com sucesso para <span id="empresa-confirmada"></span>!
+        </div>
+    </div>
+    </div>
+</div>
+        </section>
+
+        <section id="Empresas">
+            <div id="secundario" class="cont-secun"> <!-- Empresas Interessadas -->
+                <div class="cent-impr">
+                    <div class="content-impr">
+                        <div class="div-sutil">
+                            <div class="text">
+                                <h3>Curriculo Enviado</h3>
+                            </div>
+                            
+                            <div class="enviado">
+                                
+                            </div>
+                        </div>
+
+                        <div class="div-sutil">
+                            <div class="text">
+                                <h3>Empresas/Comercio Interessada(o)</h3>
+                            </div>
+                            
+
+                            <div class="resposta">
+                                <h1></h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="SobreNós">
+            <div class="ajust">
+            <div id="terciario" class="cont-terc">
+                <h2>Sobre o MatchJob</h2>
+                <p>
+                    O <strong>MatchJob</strong> é uma plataforma dedicada a conectar empresas de bairro com talentos locais de forma simples e acessível. 
+                    Nossa missão é aproximar oportunidades de quem realmente precisa, valorizando o comércio local e facilitando o acesso ao mercado de trabalho, 
+                    especialmente para jovens e trabalhadores em busca do primeiro emprego.
+                </p>
+                <p>
+                    Através de uma interface direta e sem complicações, empresas podem divulgar vagas com poucos cliques, e candidatos podem encontrar empregos 
+                    filtrando por bairro e cidade. Acreditamos que o trabalho transforma realidades — e com o MatchJob, essa transformação está ao alcance de todos.
+                </p>
+            </div>
+            </div>
+        </section>
+        
+
+
+
+    </div>
+    
+    <!-- fim barra em cima -->
+
+        <!-- Modal de Resposta -->
+    
+    <div id="modal-status" class="modal-overlay" style="display: none;">
+  <div class="modal-conteudo" style="max-width: 350px; position: relative; padding-top: 40px;">
+
+    <!-- Botão X fixado no canto superior direito -->
+    <button onclick="fecharModalStatus()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background: none; 
+        border: none; 
+        font-size: 20px; 
+        cursor: pointer; 
+        color: red;">✕</button>
+
+    <!-- FOTO DE PERFIL centralizada -->
+    <img id="modal-foto-perfil" src="./img/sla.jfif" alt="Foto de perfil" style="
+        width: 80px; 
+        height: 80px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        display: block; 
+        margin: 0 auto 10px auto;">
+
+    <!-- Título centralizado -->
+    <h3 style="text-align: center;">Status de <span id="nome-completo">Usuário</span></h3>
+
+    <hr>
+
+    <!-- Texto alinhado um pouco à esquerda -->
+    <div style="text-align: left; padding-left: 10px;">
+      <p><strong>Empresa atual:</strong> <span id="empresa-atual">[Exemplo]</span></p>
+      <p><strong>Empresas anteriores:</strong> <span id="historico-empresas">[Exemplo 1, Exemplo 2]</span></p>
+      <p><strong>Nível de profissionalismo:</strong></p>
+      <div style="padding-left: 10px; font-size: 20px;">⭐ ⭐ ⭐ ⭐ ☆</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+    
+    <script src="./inicio.js"></script>
+</body>
+</html>
