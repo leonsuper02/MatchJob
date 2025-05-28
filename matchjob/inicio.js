@@ -164,7 +164,7 @@ document.getElementById("input-foto").addEventListener("change", function(event)
 function logout() {
     localStorage.removeItem("usuarioLogado");  // limpa nome
     localStorage.removeItem("fotoUsuario");    // limpa foto
-    window.location.href = "./login.html";     // redireciona para login
+    window.location.href = "./index.html";     // redireciona para login
 }
 
 
