@@ -447,8 +447,18 @@ function carregarEmpresasInteressadas() {
         texto.innerText = `Parabéns! Você foi selecionado para a próxima fase na empresa "${envio.empresa}". Entraremos em contato por e-mail.`;
         modal.style.display = 'flex';
     };
-    
+    // Detecta clique fora da modal-conteudo
+document.getElementById('modal-resposta').addEventListener('click', function(event) {
+    // Se o clique for diretamente no overlay (não na modal-conteudo ou nos filhos dela)
+    if (event.target === this) {
+        // Esconde a modal
+        this.style.display = 'none';
         
+        // Volta para a página anterior
+        window.history.back();
+    }
+});
+
     botoes.appendChild(btnVerResposta);
     card.appendChild(botoes);
     divResposta.appendChild(card);
