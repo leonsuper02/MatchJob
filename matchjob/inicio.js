@@ -460,7 +460,9 @@ function carregarEmpresasInteressadas() {
 
 function fecharModal() {
     document.getElementById('modal-resposta').style.display = 'none';
+    // Não mexe na rolagem, só fecha.
 }
+
 
 document.querySelector('.input-group input').addEventListener('change', () => {
     mostrarVagasProximas();
