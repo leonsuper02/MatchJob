@@ -251,9 +251,10 @@
     <div class="modal-conteudo">
         <h3>Resposta da Empresa</h3>
         <p id="texto-resposta"></p>
-        <!-- <button id="fechar-modal" class="botao-ok">Ok</button> -->
+        <a href="#Empresas" onclick="fecharModal()">Ok</a>
     </div>
 </div>
+
 
 
 
@@ -261,3 +262,14 @@
     <script src="./inicio.js"></script>
 </body>
 </html>
+
+<!-- document.getElementById('modal-resposta').addEventListener('click', function(event) {
+    // Se o clique for diretamente no overlay (não na modal-conteudo ou nos filhos dela)
+    if (event.target === this) {
+        // Esconde a modal
+        this.style.display = 'none';
+        
+        // Volta para a página anterior
+        
+    }
+}); -->

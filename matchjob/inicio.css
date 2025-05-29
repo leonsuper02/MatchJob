@@ -559,34 +559,24 @@ body {
     to   { transform: scale(1); opacity: 1; }
 }
 
-/* Botão OK da modal */
-.modal-conteudo button {
-    margin-top: 20px;
+.modal-conteudo a {
+    display: block; /* Faz ela quebrar linha e ocupar toda a largura possível */
+    margin: 20px auto 0 auto; /* Centraliza e dá espaçamento acima */
     padding: 10px 18px;
-    background-color: #007bff;
+    background-color: #007bff; /* Azul padrão */
     color: white;
-    border: none;
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado padrão */
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.modal-conteudo button:hover {
-    background-color: #0056b3;
+.modal-conteudo a:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
-.modal-conteudo button {
-    display: block; /* Força ficar em linha separada */
-    margin: 20px auto 0 auto; /* Centraliza horizontalmente */
-    padding: 10px 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+
 
 
 
