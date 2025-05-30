@@ -6,8 +6,10 @@
     font-family: 'Arial', sans-serif;
 }
 
+
+
 body {
-    background-color: #f4f4f4; /* cor de fundo mais clara para destacar o menu */
+    background-color: #000; /* igual ao login */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,21 +17,60 @@ body {
     margin: 0;
 }
 
+
 .menu-container {
-    background-color: #ffffff;
-    padding: 40px 60px;
+    background-color: #444; /* igual ao login */
+    padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 800px;
 }
 
-.menu-container h1 {
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 150px; /* ou ajuste: 120px, 100px, conforme quiser */
+    height: auto;
+}
+
+.logo-container img {
+    width: 120px;
+    height: auto;
+}
+
+
+.apresentacao, .menu-container h5 {
+    color: white; /* texto branco, igual ao login */
+}
+
+.opcoes, .acao {
+    background-color: #444; /* igual ao login */
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.apresentacao {
+    font-size: 1.4rem; /* maior */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 600; /* mais "presença" */
+}
+
+
+.menu-container h5 {
     margin-bottom: 40px;
-    color: #007bff; /* azul vibrante para título */
-    font-size: 2.5rem;
-    font-weight: 600;
+    color: #007bff;
+    font-size: 1.2rem; /* MENOR que o texto de apresentação */
+    font-weight: 500;
 }
 
 .menu-escolha {
@@ -60,9 +101,125 @@ body {
     transform: translateY(2px); /* efeito ao pressionar o botão */
 }
 
+.opcoes {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto; /* centraliza */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.opcoes h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.opcoes p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.opcoes button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+    text-transform: uppercase;
+}
+
+.opcoes button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.opcoes button:active {
+    transform: translateY(2px);
+}
+
+.opcoes-unica {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* importante para quebrar no mobile */
+}
+
+
+.acao {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 260px; /* mantém largura fixa */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.acao h2 {
+    font-size: 1.4rem;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.acao p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.acao button {
+    padding: 12px 20px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.acao button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.acao button:active {
+    transform: translateY(2px);
+}
+
+
 @media (max-width: 768px) {
     .menu-container {
-        padding: 30px 40px;
+        padding: 20px; /* Reduz a altura e cria espaço lateral */
+    }
+
+    body {
+        padding: 10px;
+        padding: 20px;
+        margin: 20px; /* espaço lateral */
+        margin-top: 30px;  /* espaço acima */
+        margin-bottom: 30px; /* espaço abaixo */
     }
 
     .menu-escolha {
@@ -73,4 +230,40 @@ body {
     .menu-escolha button {
         width: 100%;
     }
+    .apresentacao {
+        font-size: 1.2rem; /* também maior no mobile */
+        margin-bottom: 20px;
+    }
+
+    .menu-container h5 {
+        font-size: 1rem;
+    }
+
+    .opcoes {
+        padding: 20px 25px;
+        width: 90%;
+    }
+
+    .opcoes h2 {
+        font-size: 1.3rem;
+    }
+
+    .opcoes p {
+        font-size: 0.95rem;
+    }
+
+    .opcoes button {
+        width: 100%;
+    }
+
+        .opcoes-unica {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .acao {
+        width: 100%;
+    }
+
+
 }
