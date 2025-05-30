@@ -15,6 +15,51 @@ window.onload = function() {
     }
 }
 
+
+const form = document.getElementById('form-vaga');
+const fotoInput = document.getElementById('foto');
+const preview = document.getElementById('preview');
+
+fotoInput.addEventListener('change', function() {
+    preview.innerHTML = ''; // limpa o preview anterior
+    const file = this.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '200px';
+            img.style.marginTop = '10px';
+            preview.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const area = document.getElementById('area').value;
+    const salario = document.getElementById('salario').value;
+    const local = document.getElementById('local').value;
+    const descricao = document.getElementById('descricao').value;
+    const foto = fotoInput.files[0];
+
+    // Aqui você pode enviar via AJAX, FormData ou só mostrar no console
+    console.log({
+        area,
+        salario,
+        local,
+        descricao,
+        foto
+    });
+
+    alert('Vaga cadastrada com sucesso!');
+});
+
+
+
 window.onload = function() {
     const nome = localStorage.getItem('nomeUsuario');
     if (nome) {

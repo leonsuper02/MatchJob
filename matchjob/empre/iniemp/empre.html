@@ -60,34 +60,43 @@
        <div class="cadastro-vaga-layout">
     <div class="formulario-vaga-container">
         <h2>Cadastrar Nova Vaga</h2>
-        <form id="form-vaga">
-            <div class="input-group">
-                <label for="empresa">Nome da Empresa/Comércio: <span id="nome-completoU">Usuário</span></label>
-                <!-- <input type="text" id="empresa" name="empresa" required> -->
-            </div>
+<form id="form-vaga">
+    <div class="input-group">
+        <label for="empresa">Nome da Empresa/Comércio: <span id="nome-completoU">Usuário</span></label>
+        <!-- <input type="text" id="empresa" name="empresa" required> -->
+    </div>
 
-            <div class="input-group">
-                <label for="area">Área:</label>
-                <input type="text" id="area" name="area" required>
-            </div>
+    <div class="input-group">
+        <label for="area">Área:</label>
+        <input type="text" id="area" name="area" required>
+    </div>
 
-            <div class="input-group">
-                <label for="salario">Salário:</label>
-                <input type="text" id="salario" name="salario" required>
-            </div>
+    <div class="input-group">
+        <label for="salario">Salário:</label>
+        <input type="text" id="salario" name="salario" required>
+    </div>
 
-            <div class="input-group">
-                <label for="local">Local de Trabalho:</label>
-                <input type="text" id="local" name="local" required>
-            </div>
+    <div class="input-group">
+        <label for="local">Local de Trabalho:</label>
+        <input type="text" id="local" name="local" required>
+    </div>
 
-            <div class="input-group">
-                <label for="descricao">Horário e Descrição:</label>
-                <textarea id="descricao" name="descricao" rows="4" required></textarea>
-            </div>
+    <div class="input-group">
+        <label for="descricao">Horário e Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+    </div>
 
-            <button type="submit">Cadastrar Vaga</button>
-        </form>
+    <div class="input-group">
+        <label for="foto">Foto da Empresa/Comércio:</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+    </div>
+<div id="preview"></div>
+    <button type="submit">Cadastrar Vaga</button>
+</form>
+
+<!-- Preview da imagem -->
+
+
     </div>
 
     <div class="espaco-funcionarios">
