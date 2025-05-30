@@ -15,18 +15,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow-x: hidden; /* remove qualquer scroll lateral */
 }
+
+
+
 
 
 .menu-container {
-    background-color: #444; /* igual ao login */
-    padding: 30px 40px;
+    width: 100%;
+    max-width: 800px; /* desktop */
+    padding: 20px;
+    margin: 20px auto;
+    box-sizing: border-box; /* ESSENCIAL! */
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
+    background-color: #444;
 }
+
 
 .logo-container {
     display: flex;
@@ -46,7 +51,7 @@ body {
 }
 
 
-.apresentacao, .menu-container h5 {
+.apresentacao, .menu-container h6 {
     color: white; /* texto branco, igual ao login */
 }
 
@@ -58,7 +63,7 @@ body {
 
 
 .apresentacao {
-    font-size: 1.4rem; /* maior */
+    font-size: 0.9rem; /* maior */
     margin-bottom: 30px;
     line-height: 1.6;
     text-align: center;
@@ -66,7 +71,7 @@ body {
 }
 
 
-.menu-container h5 {
+.menu-container h6 {
     margin-bottom: 40px;
     color: #007bff;
     font-size: 1.2rem; /* MENOR que o texto de apresentação */
@@ -210,9 +215,7 @@ body {
 
 
 @media (max-width: 768px) {
-    .menu-container {
-        padding: 20px; /* Reduz a altura e cria espaço lateral */
-    }
+    
 
     body {
         padding: 10px;
