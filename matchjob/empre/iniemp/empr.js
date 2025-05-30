@@ -29,13 +29,16 @@ fotoInput.addEventListener('change', function() {
         reader.onload = function(e) {
             const img = document.createElement('img');
             img.src = e.target.result;
-            img.style.maxWidth = '200px';
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+            img.style.borderRadius = '10px';
             img.style.marginTop = '10px';
             preview.appendChild(img);
         }
         reader.readAsDataURL(file);
     }
 });
+
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();

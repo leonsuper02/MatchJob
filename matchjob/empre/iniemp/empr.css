@@ -247,6 +247,7 @@ body {
 
 
 
+
 #Empresas h1 {
     font-size: 28px;
     color: #007bff;
@@ -594,6 +595,22 @@ body {
     color: #007bff;
     margin-bottom: 20px;
 }
+
+#preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+}
+
+#preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 #form-vaga .input-group {
     margin-bottom: 15px;
