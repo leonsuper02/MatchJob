@@ -460,12 +460,17 @@ body {
 
 
 /* Estilo para input de pesquisa */
-.input-group {
+/* .input-group {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
+} */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
 }
-
 .mapa-centralizado {
     display: flex;
     justify-content: center;
@@ -881,6 +886,10 @@ html, body {
     #form-curriculo input,
     #form-curriculo textarea {
         font-size: 14px;
+    }
+        .input-group {
+        max-width: 90%;
+        margin: 0 auto 15px auto;
     }
 
     .login-container,
