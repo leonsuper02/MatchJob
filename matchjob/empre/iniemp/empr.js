@@ -62,7 +62,7 @@ document.getElementById("input-foto").addEventListener("change", function () {
 function logout() {
     localStorage.removeItem("usuarioLogado");  // limpa nome
     localStorage.removeItem("fotoUsuario");    // limpa foto
-    window.location.href = "../logemp/login.html";     // redireciona para login
+    window.location.href = "../login.html";     // redireciona para login
 }
 
 
