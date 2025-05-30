@@ -583,6 +583,14 @@ body {
     align-items: flex-start;
 }
 
+#form-vaga input[type="file"] {
+    padding: 10px 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+
 .formulario-vaga-container {
     background-color: #fff;
     padding: 30px;
@@ -590,10 +598,21 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+.formulario-vaga-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
 .formulario-vaga-container h2 {
     text-align: center;
     color: #007bff;
     margin-bottom: 20px;
+}
+
+#form-vaga {
+    width: 100%;
 }
 
 #preview {
@@ -603,13 +622,16 @@ body {
     margin-top: 10px;
     width: 100%;
     max-width: 100%;
+    overflow: hidden;
 }
 
 #preview img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    object-fit: contain;
 }
+
 
 
 #form-vaga .input-group {
@@ -646,7 +668,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
+#form-vaga button {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 12px 20px;
+    border-radius: 10px;
+}
 #form-vaga button:hover {
     background-color: #0056b3;
 }
@@ -760,6 +787,11 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 }
+
+    #form-vaga button {
+        width: 100%;
+        margin: 20px 0 0 0;
+    }
 
 
     .sidebar {
@@ -893,7 +925,11 @@ html, body {
     }
 
     .formulario-vaga-container {
-        width: 100%;
+        padding: 15px;
+    }
+
+    .inicioum {
+        padding: 15px;
     }
 
 }

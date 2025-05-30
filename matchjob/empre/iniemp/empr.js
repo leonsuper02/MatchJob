@@ -57,7 +57,11 @@ form.addEventListener('submit', function(event) {
         descricao,
         foto
     });
+    // Limpar os campos
+    form.reset();
 
+    // Limpar o preview da imagem
+    preview.innerHTML = '';
     alert('Vaga cadastrada com sucesso!');
 });
 
