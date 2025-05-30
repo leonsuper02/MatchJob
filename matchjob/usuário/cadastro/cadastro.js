@@ -41,5 +41,5 @@ function cadastrar() {
     localStorage.setItem('nomeUsuario', nome);
 
     // Redirecionar para a página inicial
-    window.location.href = "inicio.html";
+    window.location.href = "../inicio/inicio.html";
 }

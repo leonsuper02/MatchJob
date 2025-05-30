@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo-removebg-preview.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Job | Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="cadastro-container"> <!--div central -->
+        <img src="../img/matchjob.png" alt="Logo" class="logo">
+        
+        <div class="input-group"> <!-- Nome -->
+            <label for="nome">Nome da Empresa/Comercio:</label> 
+            <input type="text" id="nome" placeholder="Digite seu nome">
+        </div>
+        
+        <div class="input-group"> <!-- Gmail -->
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail">
+        </div>
+        
+        <div class="input-group"> <!-- senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+        </div>
+
+        <div class="input-group"> <!-- repetir senha -->
+            <label for="senha2">Confirmar Senha:</label>
+            <input type="password" id="senha2" placeholder="Repita sua senha">
+        </div>
+
+        <button class="cadastro-btn" onclick="cadastrar()">Cadastrar</button> <!-- Botão confirmar -->
+        
+        <!-- <input type="password" id="senha2" /> -->
+        <div id="mensagemErro" style="color: red; margin-top: 5px;"></div>
+
+    </div>
+    <script src="cadastro.js"></script>
+</body>
+</html>

@@ -1,59 +1,3 @@
-const vagas = [
-    {
-        empresa: "CEAP",
-        endereco: "R. José Viêira Martins, 270",
-        lat: -23.698,
-        lng: -46.653,
-        area: "tecnologia",
-        imagem: "./img/trabalho3.PNG",
-        descricao: "Centro educacional com foco em capacitação técnica e inclusão digital.",
-        salario: "R$ 3.200,00",
-        localTrabalho: "Presencial",
-        beneficios: "Vale-transporte, Vale-refeição , Plano de saúde",
-        horario: "08h às 17h (segunda a sexta)"
-    },
-    {
-        empresa: "EcoLog",
-        endereco: "Av. Verde, 45",
-        lat: -23.700,
-        lng: -46.650,
-        area: "logística",
-        imagem: "./img/trabalho1.PNG",
-        descricao: "Empresa especializada em transporte sustentável e logística verde.",
-        salario: "R$ 2.800,00",
-        localTrabalho: "Híbrido",
-        beneficios: "Auxílio combustível Gympass",
-        horario: "07h às 16h (segunda a sábado)"
-    },
-    {
-        empresa: "BioVita",
-        endereco: "Rua da Saúde, 88",
-        lat: -23.695,
-        lng: -46.655,
-        area: "farmácia",
-        imagem: "./img/trabalho2.PNG",
-        descricao: "Laboratório farmacêutico inovador, focado em saúde e bem-estar.",
-        salario: "R$ 3.600,00",
-        localTrabalho: "Presencial",
-        beneficios: "Plano odontológico, Bônus por desempenho",
-        horario: "09h às 18h (segunda a sexta)"
-    },
-    {
-        empresa: "EduMais",
-        endereco: "Av. Ensino, 10",
-        lat: -23.702,
-        lng: -46.648,
-        area: "educação",
-        imagem: "./img/trabalho4.PNG",
-        descricao: "Instituição de ensino EAD com foco em educação acessível e moderna.",
-        salario: "R$ 2.500,00",
-        localTrabalho: "Home Office",
-        beneficios: "Horário flexível, Cursos gratuitos",
-        horario: "Flexível (carga horária de 40h/semana)"
-    }
-];
-
-
 window.onload = function() {
     const nome = localStorage.getItem('nomeUsuario');
 
@@ -61,6 +5,7 @@ window.onload = function() {
         document.getElementById('nome-usuario').innerText = nome;
         document.getElementById('nome-curto').innerText = nome;
         document.getElementById('nome-completo').innerText = nome;
+        document.getElementById('nome-completoU').innerText = nome;
     }
 
     const fotoSalva = localStorage.getItem('fotoPerfil');
@@ -69,25 +14,6 @@ window.onload = function() {
         document.getElementById('foto-usuario').src = fotoSalva;
     }
 }
-document.getElementById('input-foto').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            const imgData = e.target.result;
-
-            // Salva no localStorage
-            localStorage.setItem('fotoPerfil', imgData);
-
-            // Atualiza a foto
-            document.getElementById('foto-usuario').src = imgData;
-        };
-
-        reader.readAsDataURL(file);
-    }
-});
 
 window.onload = function() {
     const nome = localStorage.getItem('nomeUsuario');
@@ -95,6 +21,7 @@ window.onload = function() {
         document.getElementById('nome-usuario').innerText = nome;
         document.getElementById('nome-curto').innerText = nome;
         document.getElementById('nome-completo').innerText = nome;
+        document.getElementById('nome-completoU').innerText = nome;
     }
 
     const fotoSalva = localStorage.getItem('fotoPerfil');
@@ -103,23 +30,6 @@ window.onload = function() {
         document.getElementById('modal-foto-perfil').src = fotoSalva;
     }
 };
-
-document.getElementById('input-foto').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imgData = e.target.result;
-            localStorage.setItem('fotoPerfil', imgData);
-            document.getElementById('foto-usuario').src = imgData;
-            document.getElementById('modal-foto-perfil').src = imgData;
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-
-
 
 // Abrir barra lateral
 function toggleMenu() {
@@ -136,35 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Ao escolher um arquivo, atualizar foto e salvar localmente
-// document.getElementById("input-foto").addEventListener("change", function () {
-//     const file = this.files[0];
-//     if (!file) return;
+document.getElementById("input-foto").addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
 
-//     const reader = new FileReader();
-//     reader.onload = function (e) {
-//         const imgData = e.target.result;
-//         document.getElementById("foto-usuario").src = imgData;
-//         localStorage.setItem("fotoUsuario", imgData);
-//     };
-//     reader.readAsDataURL(file);
-// });
-document.getElementById("input-foto").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imageData = e.target.result;
-            localStorage.setItem("fotoUsuario", imageData);
-            document.getElementById("foto-usuario").src = imageData;
-        };
-        reader.readAsDataURL(file);
-    }
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const imgData = e.target.result;
+        document.getElementById("foto-usuario").src = imgData;
+        localStorage.setItem("fotoUsuario", imgData);
+    };
+    reader.readAsDataURL(file);
 });
 
 function logout() {
     localStorage.removeItem("usuarioLogado");  // limpa nome
     localStorage.removeItem("fotoUsuario");    // limpa foto
-    window.location.href = "./index.html";     // redireciona para login
+    window.location.href = "../logemp/login.html";     // redireciona para login
 }
 
 
@@ -418,8 +316,7 @@ function carregarEmpresasInteressadas() {
 
         if (!envio.status || envio.status.includes('Aguardando')) {
             const btnCancelar = document.createElement('button');
-            btnCancelar.textContent = '❌ Cancelar Envio';
-            btnCancelar.classList.add('botao-acao', 'botao-cancelar');
+            btnCancelar.textContent = '❌ Cancelar';
             btnCancelar.style.marginRight = '8px';
             btnCancelar.onclick = () => cancelarEnvio(index);
 
@@ -438,17 +335,9 @@ function carregarEmpresasInteressadas() {
         } else {
     const btnVerResposta = document.createElement('button');
     btnVerResposta.textContent = '👁 Ver Resposta';
-    btnVerResposta.classList.add('botao-acao', 'botao-resposta');
-
     btnVerResposta.onclick = () => {
-        const modal = document.getElementById('modal-resposta');
-        const texto = document.getElementById('texto-resposta');
-    
-        texto.innerText = `Parabéns! Você foi selecionado para a próxima fase na empresa "${envio.empresa}". Entraremos em contato por e-mail.`;
-        modal.style.display = 'flex';
+        alert(`Resposta da empresa "${envio.empresa}":\n\nParabéns! Você foi selecionado para a próxima fase. Entraremos em contato por e-mail.`);
     };
-    // Detecta clique fora da modal-conteudo
-
 
     botoes.appendChild(btnVerResposta);
     card.appendChild(botoes);
@@ -456,11 +345,6 @@ function carregarEmpresasInteressadas() {
 }
 
     });
-}
-
-function fecharModal() {
-    document.getElementById('modal-resposta').style.display = 'none';
-    // Não mexe na rolagem, só fecha.
 }
 
 
@@ -562,39 +446,8 @@ function simularResposta(index) {
     carregarEmpresasInteressadas();
 }
 
-// mapa
-
-let mapa = L.map('mapa-leaflet').setView([-23.55052, -46.633308], 13); // posição inicial (São Paulo)
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap',
-}).addTo(mapa);
-
-let marcador = L.marker([-23.55052, -46.633308]).addTo(mapa);
-
-// Função para buscar e centralizar o mapa por endereço
-document.getElementById('busca-endereco').addEventListener('input', function (e) {
-    const endereco = e.target.value;
-
-    if (endereco.length > 4) {
-        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(endereco)}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.length > 0) {
-                    const latitude = parseFloat(data[0].lat);
-                    const longitude = parseFloat(data[0].lon);
-
-                    mapa.setView([latitude, longitude], 15);
-                    marcador.setLatLng([latitude, longitude]);
-                }
-            })
-            .catch(err => console.error("Erro na geocodificação:", err));
-    }
-});
-
-
-function fecharModalResposta() {
-    const modal = document.getElementById("modal-resposta");
+function fecharModalStatus() {
+    const modal = document.getElementById("modal-status");
     if (modal) {
         modal.style.display = "none";
     }
@@ -606,43 +459,3 @@ function abrirModalStatus() {
         modal.style.display = "flex";
     }
 }
-
-function fecharModalStatus() {
-    const modal = document.getElementById("modal-status");
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
-
-function carregarDadosUsuario() {
-    const nome = localStorage.getItem("usuarioLogado") || "Usuário";
-    const foto = localStorage.getItem("fotoUsuario");
-
-    // Nome nos lugares certos
-    document.getElementById("nome-usuario").innerText = nome;
-    document.getElementById("nome-curto").innerText = nome;
-    document.getElementById("nome-completo").innerText = nome;
-
-    // Foto no topo
-    if (foto) {
-        document.getElementById("foto-usuario").src = foto;
-    }
-
-    // Foto dentro da modal de status
-    const conteudoModal = document.querySelector("#modal-status .modal-conteudo");
-    let img = document.getElementById("foto-status");
-    if (!img) {
-        img = document.createElement("img");
-        img.id = "foto-status";
-        img.style.width = "80px";
-        img.style.height = "80px";
-        img.style.borderRadius = "50%";
-        img.style.margin = "10px 0";
-        conteudoModal.insertBefore(img, conteudoModal.children[1]); // logo após o título
-    }
-    if (foto) {
-        img.src = foto;
-    }
-}
-
-carregarDadosUsuario();

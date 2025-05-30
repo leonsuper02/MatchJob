@@ -1,0 +1,825 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: rgb(235, 235, 235);
+}
+.sidebar {
+    width: 0;
+    height: 100vh;
+    background: #222;
+    overflow: hidden;
+    transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.sidebar.open {
+    width: 200px;
+}
+.menu-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+.logo-cima{
+    width: 150px;
+    height: 50px;
+}
+.menu-link {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    background: gray;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-link.selected {
+    background: #4a4a4a; /* um cinza mais escuro pra indicar seleção */
+}
+.sidebar.open .menu-button {
+    display: block;
+}
+.content {
+    flex: 1;
+}
+.header {
+    height: 50px;
+    background: #444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-width: 160px;
+    z-index: 100;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform: scale(0.95);
+    opacity: 0;
+}
+
+.user-menu.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.user-menu a,
+.user-menu label {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.user-menu a:hover,
+.user-menu label:hover {
+    background-color: #f2f2f2;
+}
+
+.user-menu a:last-child,
+.user-menu label:last-child {
+    border-bottom: none;
+}
+
+.inicio{
+    width: 100%;
+    padding: 43.9vh;
+    display: block;
+    display: contents;
+}
+
+
+
+
+/* home: atualizando */
+.inicioum{
+    background-color: white;
+    padding: 30px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+}
+.cent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.ajust{
+    padding: 20px;
+}
+
+
+.mostra{
+    /* background-color: black; */
+    display: none;
+}
+
+
+.iniciodois{
+    padding-left: 30px;
+
+}
+
+
+
+.opc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 20px;
+    max-width: 1200px;   /* largura máxima em telas grandes */
+    height: 69vh;        /* altura fixa com base na altura da janela */
+    overflow-y: auto;    /* rolagem vertical se passar do limite */
+    padding: 10px;
+    margin: 0 auto;      /* centraliza a div horizontalmente */
+    background-color: #f9f9f9; /* opcional: fundo neutro */
+    border-radius: 10px; /* opcional: cantos arredondados */
+}
+
+/* const cor = document.getElementsByClassName("opc").style.backgroundColor = "rgb(235, 235, 235)"; */
+
+/* home: atualizando */
+
+
+
+
+
+/* empresas interessadas */
+
+.cent-impr{
+    display: grid;
+    padding: 20px;
+    width: 100%;
+    height: 90vh;
+}
+.content-impr{
+    background-color: white;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    gap: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.conteudo {
+  width: 95%;  /* Aumentei para ocupar mais a área branca */
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo {
+  margin-bottom: 20px;
+}
+
+.box-cinza {
+  background-color: rgb(240, 240, 240);
+  width: 100%; /* Mantém ocupando toda a largura do conteúdo */
+  height: 600px; /* Aumentei a altura, ajuste conforme preferir */
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#Empresas h1 {
+    font-size: 28px;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.div-sutil {
+    border: 1px solid #e0e0e0; /* cinza claro */
+    border-radius: 8px;        /* opcional: cantos arredondados */
+    padding-top: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 13px;
+}
+
+.cont-terc{
+    background-color: white;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: grid;
+    gap: 10px;
+}
+
+
+/* agui */
+/* .enviado{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: 94%;
+    display: flex;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.resposta{
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: 94%; 
+    display: flex;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+} */
+
+.enviado,
+.resposta {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 100%;
+    max-width: 1200px;   /* largura máxima em telas grandes */
+    height: 75vh;        /* altura fixa baseada na tela */
+    overflow-y: auto;    /* rolagem vertical */
+    margin: 0 auto;      /* centraliza a div */
+}
+
+
+.card-empresa {
+    flex: 1 1 250px; /* cada card terá no mínimo 250px e pode crescer */
+    max-width: 300px;
+}
+
+
+.text{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* fim empresas interessadas */
+
+/*chat*/
+
+.cont-prin{
+    width: 100%;
+    display: none;
+}
+.cont-secun{
+    width: 100%;
+    display: none;
+}
+.cont-terc{
+    width: 100%;
+    display: none;
+}
+
+/* corpo um */
+
+#form-curriculo {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-curriculo label {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+#form-curriculo input, #form-curriculo textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#form-curriculo button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form-curriculo button:hover {
+    background-color: #0056b3;
+}
+
+.sucesso {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+
+
+
+
+
+#detalhes-empresa {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#detalhes-empresa .info h3 {
+    margin-bottom: 8px;
+}
+
+#detalhes-empresa button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#detalhes-empresa button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.card-empresa {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-empresa .nome-empresa {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #007bff; /* azul forte para destaque */
+    margin-bottom: 8px;
+}
+
+.card-empresa:hover {
+    transform: scale(1.02);
+}
+
+.card-empresa p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.card-empresa strong {
+    color: #000;
+}
+
+
+
+/* Estilo para input de pesquisa */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapa-centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+.mapa-destaque {
+    background-color: #e8f4ff; /* azul clarinho para destacar */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+.mapa-destaque iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* Estilo para os botões das vagas */
+#lista-trabalhos button {
+    padding: 12px 16px;
+    margin: 8px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    text-align: left;
+}
+
+#lista-trabalhos button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+
+
+
+@media (max-width: 768px) {
+    body {
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .opc {
+      grid-template-columns: 1fr;
+    }
+  
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -200px;
+      width: 200px;
+      height: 100%;
+      background: #222;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  
+    .menu-btn {
+      z-index: 1100;
+      position: relative;
+    }
+  
+    .content {
+      margin-left: 0;
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .header {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: #444;
+    }
+  
+    .logo-cima {
+      width: 100px;
+      height: auto;
+    }
+  
+    .inicio {
+      padding: 80px 10px 10px 10px; /* espaço para header fixa */
+    }
+  
+    .cent {
+      display: block;
+    }
+  
+    .pesq,
+    .iniciodois {
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    iframe {
+      width: 100% !important;
+      height: auto !important;
+    }
+  
+    .content-impr {
+      grid-template-columns: 1fr;
+    }
+  
+    .card-empresa {
+      font-size: 14px;
+    }
+  
+    .input-group input,
+    #form-curriculo input,
+    #form-curriculo textarea {
+      font-size: 14px;
+    }
+  
+    .login-container,
+    .cadastro-container {
+      width: 90%;
+      max-width: 350px;
+    }
+    .mapa-centralizado iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+    }
+
+  }
+
+  /* === SOBRE NÓS === */
+.cont-terc {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    min-height: 60vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cont-terc h2 {
+    font-size: 28px;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cont-terc p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+}
+
+
+.cadastro-vaga-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.formulario-vaga-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-vaga-container h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#form-vaga .input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-vaga label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#form-vaga input,
+#form-vaga textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+#form-vaga textarea {
+    resize: vertical;
+}
+
+#form-vaga button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form-vaga button:hover {
+    background-color: #0056b3;
+}
+
+.espaco-funcionarios {
+    background-color: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    height: 100%;
+    min-height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fundo escuro da modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none; /* oculta por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Conteúdo central da modal */
+.modal-conteudo {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: aparecer 0.3s ease;
+    position: relative; /* importante para posicionar o botão X */
+    padding-top: 40px; /* espaço superior para o botão */
+}
+
+/* Botão de fechar (X) */
+.modal-conteudo button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+/* Imagem de perfil na modal */
+.modal-conteudo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* Título já centralizado por padrão com text-align: center; */
+
+/* Bloco de informações da modal */
+.modal-conteudo .info-texto {
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Estilo das estrelas de avaliação */
+.modal-conteudo .avaliacao {
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+/* Links dentro da modal */
+.modal-conteudo a {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-conteudo a:hover {
+    background-color: #0056b3;
+}
+
+/* Animação de entrada */
+@keyframes aparecer {
+    from { transform: scale(0.9); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+  

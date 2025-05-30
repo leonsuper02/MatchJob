@@ -1,0 +1,76 @@
+/* Resetando estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4; /* cor de fundo mais clara para destacar o menu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.menu-container {
+    background-color: #ffffff;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.menu-container h1 {
+    margin-bottom: 40px;
+    color: #007bff; /* azul vibrante para título */
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.menu-escolha {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.menu-escolha button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff; /* azul forte para os botões */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2); /* sombra suave */
+    text-transform: uppercase;
+}
+
+.menu-escolha button:hover {
+    background-color: #0056b3; /* efeito ao passar o mouse */
+    transform: translateY(-4px); /* elevação suave no botão */
+}
+
+.menu-escolha button:active {
+    transform: translateY(2px); /* efeito ao pressionar o botão */
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        padding: 30px 40px;
+    }
+
+    .menu-escolha {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-escolha button {
+        width: 100%;
+    }
+}
